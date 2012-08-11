@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="lib">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../commonlibs/streaming.jar!/" />
+          <root url="jar://$MODULE_DIR$/../commonlibs/rttibase.jar!/" />
+          <root url="jar://$MODULE_DIR$/../commonlibs/rttiutils.jar!/" />
+          <root url="jar://$MODULE_DIR$/../commonlibs/rtti.jar!/" />
+          <root url="jar://$MODULE_DIR$/../commonlibs/xmlstreaming.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../commonlibs/rtti-src-all.jar!/" />
+          <root url="jar://$MODULE_DIR$/../commonlibs/streaming-src-all.jar!/" />
+          <root url="jar://$MODULE_DIR$/../commonlibs/rttiutils-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/../commonlibs/xmlstreaming-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/../commonlibs/streaming-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/../commonlibs/rttibase-src.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
+

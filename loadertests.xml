@@ -1,0 +1,142 @@
+<project name="data.test"
+         basedir="."
+         default="data.test.app">
+
+    <import file="../commonlibs/taskdefinitions.xml"/>
+
+    <path id="data.test.app.class.path">
+        <pathelement path="build/classes"/>
+        <pathelement path="build/tests"/>
+
+        <fileset dir="../commonlibs">
+            <include name="*.jar"/>
+            <include name="anttask.jar"/>
+        </fileset>
+    </path>
+
+
+    <target name="data.test.app.jar.check">
+        <uptodate property="data.test.app.jar.skip"
+                  targetfile="build/app/datatest.jar">
+            <srcfiles file="loadertests.xml"/>
+            <srcfiles file="loadertests.iml"/>
+            <srcfiles dir="src"/>
+            <srcfiles dir="data"/>
+            <srcfiles dir="tests"/>
+            <srcfiles dir="META-INF"/>
+        </uptodate>
+    </target>
+
+
+    <target name="data.test.app.jar"
+            depends="data.test.app.jar.check"
+            unless="data.test.app.jar.skip">
+
+        <mkdir dir="build/classes"/>
+        <mkdir dir="build/tests"/>
+
+        <filelinechecker
+                linefilter="ru.steamengine.helpers.anttasks.filechecker.filefilter.NoRusSymbols"
+                classsearchpathref="data.test.app.class.path">
+            <fileset dir="src">
+                <include name="**/*.java"/>
+                <include name="**/*.xml"/>
+            </fileset>
+            <fileset dir="tests">
+                <include name="**/*.java"/>
+            </fileset>
+        </filelinechecker>
+
+        <javac target="1.6"
+               source="1.6"
+               srcdir="src"
+               destdir="build/classes"
+               debug="true"
+               optimize="on"
+               encoding="utf-8"
+               classpathref="data.test.app.class.path">
+        </javac>
+
+        <copydir src="META-INF"
+                 dest="build/classes/META-INF"/>
+
+        <copydir src="data"
+                 dest="build/classes/data"/>
+
+        <javac target="1.6"
+               source="1.6"
+               srcdir="tests"
+               destdir="build/tests"
+               debug="true"
+               optimize="on"
+               encoding="utf-8"
+               classpathref="data.test.app.class.path">
+        </javac>
+
+        <junit fork="yes"
+               haltonfailure="yes"
+               printsummary="yes">
+
+            <formatter type="plain" usefile="false"/>
+            <classpath refid="data.test.app.class.path"/>
+            <jvmarg value="-enableassertions"/>
+            <batchtest>
+                <fileset dir="tests">
+                    <include name="**/*Test.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+
+        <jar destfile="build/app/datatest.jar"
+             basedir="build/classes"
+             compress="false">
+        </jar>
+
+        <searchclassdefinition
+                debug="true"
+                classfilter="ru.steamengine.rttiutils.defaultimplementors.LoaderClassFilter"
+                dest="META-INF/classes.clr"
+
+                searchclasspathref="data.test.app.class.path">
+
+            <fileset dir="../commonlibs">
+                <include name="testjar.jar"/>
+            </fileset>
+            <fileset dir="build/classes">
+                <include name="**/*.class"/>
+            </fileset>
+        </searchclassdefinition>
+
+
+
+        <jar destfile="datatest-src.jar"
+             basedir="src"
+             compress="true">
+        </jar>
+    </target>
+
+    <target name="data.test.app"
+            description="build library for common use"
+            depends="data.test.app.jar">
+
+        <copy todir="build/app">
+            <fileset dir="bin">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+        <copy todir="build/app/libs">
+            <fileset dir="../commonlibs">
+                <include name="rttiutils.jar"/>
+                <include name="jdom.jar"/>
+                <include name="rttibase.jar"/>
+                <include name="rtti.jar"/>
+                <include name="rttibase.jar"/>
+                <include name="streaming.jar"/>
+                <include name="xmlstreaming.jar"/>
+            </fileset>
+        </copy>
+
+
+    </target>
+
+</project>

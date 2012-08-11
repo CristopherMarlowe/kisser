@@ -1,0 +1,39 @@
+<objects>
+    <obj clsid="root" name="ROOT_NAME" pos="0">
+        <prop path="s1" value="gshjkjkhfdgahsgfkahdgkgadksfgakjsfgakjdhsgfkdasgyrhadfakj"/>
+        <prop path="object1" value="o11"/>
+        <prop path="object2" value="o21"/>
+        <prop path="object3" value="o31"/>
+    </obj>
+    <obj clsid="o1" name="o11" pos="1">
+        <prop path="longData" value="10293121828"/>
+    </obj>
+    <obj clsid="o2" name="o21" pos="2">
+        <prop path="list1">
+            <item value="10201"/>
+            <item/>
+            <item value="1003"/>
+            <item/>
+            <item value="1004"/>
+            <item/>
+            <item value="1005"/>
+            <item/>
+            <item value="1001"/>
+            <item/>
+            <item value="1001"/>
+            <item/>
+            <item value="1001"/>
+            <item/>
+            <item value="1001"/>
+            <item/>
+            <item value="1001"/>
+            <item/>
+            <item value="1001"/>
+            <item/>
+            <item value="1001"/>
+            <item/>
+            <item value="1001"/>
+        </prop>
+    </obj>
+    <obj clsid="o3" name="o31" pos="3"/>
+</objects>
