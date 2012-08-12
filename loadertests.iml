@@ -11,20 +11,19 @@
     <orderEntry type="module-library">
       <library name="lib">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../commonlibs/streaming.jar!/" />
-          <root url="jar://$MODULE_DIR$/../commonlibs/rttibase.jar!/" />
-          <root url="jar://$MODULE_DIR$/../commonlibs/rttiutils.jar!/" />
-          <root url="jar://$MODULE_DIR$/../commonlibs/rtti.jar!/" />
-          <root url="jar://$MODULE_DIR$/../commonlibs/xmlstreaming.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/rttiutils.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/rttibase.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/xmlstreaming.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/streaming.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/rtti.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../commonlibs/rtti-src-all.jar!/" />
-          <root url="jar://$MODULE_DIR$/../commonlibs/streaming-src-all.jar!/" />
-          <root url="jar://$MODULE_DIR$/../commonlibs/rttiutils-src.jar!/" />
-          <root url="jar://$MODULE_DIR$/../commonlibs/xmlstreaming-src.jar!/" />
-          <root url="jar://$MODULE_DIR$/../commonlibs/streaming-src.jar!/" />
-          <root url="jar://$MODULE_DIR$/../commonlibs/rttibase-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/src/xmlstreaming-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/src/streaming-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/src/rttibase-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/src/rttiutils-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/src/rtti-src.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

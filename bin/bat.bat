@@ -1,8 +1,8 @@
 @set CURRENT_DIR=%CD%
-@set APP_HOME=%CD%\..
+@set APP_HOME=%CD%
 @cd %APP_HOME%
 
-@set CLASSPATH=%APP_HOME%\*;%APP_HOME%\components\*;%APP_HOME%\libs\*
+@set CLASSPATH=%APP_HOME%\*;%APP_HOME%\libs\*
 
 @set JVMOPTIONS=-showversion -Xms50m -Xmx50m
 @set DEBUG=-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_shmem,server=y,suspend=n,address=test

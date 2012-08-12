@@ -1,0 +1,22 @@
+<project name="taskdefinitions" >
+
+    <path id="taskdefinitions.class.path">
+        <fileset dir="libs">
+            <include name="anttask.jar"/>
+            <include name="rttibase.jar"/>
+        </fileset>
+    </path>
+
+    <taskdef name="filelinechecker"
+             classname="ru.steamengine.helpers.anttasks.filechecker.filefilter.FileLineChecker"
+             classpathref="taskdefinitions.class.path"/>
+
+    <typedef name="classexclusion"
+             classname="ru.steamengine.helpers.anttasks.updateclassdefinition.searchclassdefinition.ClassExclusion"
+             classpathref="taskdefinitions.class.path"/>
+
+    <taskdef name="searchclassdefinition"
+             classname="ru.steamengine.helpers.anttasks.updateclassdefinition.searchclassdefinition.SearchClassDefinition"
+             classpathref="taskdefinitions.class.path"/>
+
+</project>

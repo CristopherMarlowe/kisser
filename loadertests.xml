@@ -1,16 +1,16 @@
 <project name="data.test"
-         basedir="."
          default="data.test.app">
 
-    <import file="../commonlibs/taskdefinitions.xml"/>
+    <import file="libs/taskdefinitions.xml"/>
 
     <path id="data.test.app.class.path">
         <pathelement path="build/classes"/>
         <pathelement path="build/tests"/>
 
-        <fileset dir="../commonlibs">
-            <include name="*.jar"/>
+
+        <fileset dir="libs">
             <include name="anttask.jar"/>
+            <include name="*.jar"/>
         </fileset>
     </path>
 
@@ -34,18 +34,6 @@
 
         <mkdir dir="build/classes"/>
         <mkdir dir="build/tests"/>
-
-        <filelinechecker
-                linefilter="ru.steamengine.helpers.anttasks.filechecker.filefilter.NoRusSymbols"
-                classsearchpathref="data.test.app.class.path">
-            <fileset dir="src">
-                <include name="**/*.java"/>
-                <include name="**/*.xml"/>
-            </fileset>
-            <fileset dir="tests">
-                <include name="**/*.java"/>
-            </fileset>
-        </filelinechecker>
 
         <javac target="1.6"
                source="1.6"
@@ -77,7 +65,9 @@
                haltonfailure="yes"
                printsummary="yes">
 
-            <formatter type="plain" usefile="false"/>
+            <formatter type="plain"
+                       usefile="false"/>
+
             <classpath refid="data.test.app.class.path"/>
             <jvmarg value="-enableassertions"/>
             <batchtest>
@@ -96,18 +86,11 @@
                 debug="true"
                 classfilter="ru.steamengine.rttiutils.defaultimplementors.LoaderClassFilter"
                 dest="META-INF/classes.clr"
-
                 searchclasspathref="data.test.app.class.path">
-
-            <fileset dir="../commonlibs">
-                <include name="testjar.jar"/>
-            </fileset>
             <fileset dir="build/classes">
                 <include name="**/*.class"/>
             </fileset>
         </searchclassdefinition>
-
-
 
         <jar destfile="datatest-src.jar"
              basedir="src"
@@ -125,7 +108,7 @@
             </fileset>
         </copy>
         <copy todir="build/app/libs">
-            <fileset dir="../commonlibs">
+            <fileset dir="libs">
                 <include name="rttiutils.jar"/>
                 <include name="jdom.jar"/>
                 <include name="rttibase.jar"/>
