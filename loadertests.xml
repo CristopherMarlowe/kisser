@@ -77,6 +77,8 @@
             </batchtest>
         </junit>
 
+        <mkdir dir="build/app/src/"/>
+
         <jar destfile="build/app/datatest.jar"
              basedir="build/classes"
              compress="false">
@@ -92,7 +94,7 @@
             </fileset>
         </searchclassdefinition>
 
-        <jar destfile="datatest-src.jar"
+        <jar destfile="build/app/src/datatest-src.jar"
              basedir="src"
              compress="true">
         </jar>
@@ -107,15 +109,19 @@
                 <include name="**/*.*"/>
             </fileset>
         </copy>
+
         <copy todir="build/app/libs">
             <fileset dir="libs">
                 <include name="rttiutils.jar"/>
-                <include name="jdom.jar"/>
                 <include name="rttibase.jar"/>
                 <include name="rtti.jar"/>
                 <include name="rttibase.jar"/>
                 <include name="streaming.jar"/>
                 <include name="xmlstreaming.jar"/>
+            </fileset>
+
+            <fileset dir="libs">
+                <include name="jdom.jar"/>
             </fileset>
         </copy>
 
