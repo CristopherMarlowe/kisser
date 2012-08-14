@@ -9,10 +9,14 @@ package eu.loaders.objs;
 
 import ru.steamengine.rtti.basetypes.ClassPropertyRegistry;
 import ru.steamengine.rtti.basetypes.ClassRegistryContext;
+import ru.steamengine.rtti.basetypes.ObjectNameProcessor;
 import ru.steamengine.rtti.basetypes.ReadNotifier;
 import ru.steamengine.rtti.defaultimplementors.DefaultRttiHelper;
 
-public class Object3 {
+public class Object3  extends Ancestor {
+
+    private String name;
+
 
 
     @ClassPropertyRegistry
@@ -20,11 +24,8 @@ public class Object3 {
         c.regObjCreator(DefaultRttiHelper.getClassCreator(Object3.class, "o3"));
         c.regReadNotfier(new ReadNotifier<Object3>() {
             public void onObjectRead(Object3 object, ReadMode readMode) {
-                object.getClass();                
-
             }
         });
-
     }
 
 

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Object2 {
+public class Object2 extends Ancestor  {
 
     private final List<Long> longs = new ArrayList<Long>() {
         {

@@ -8,6 +8,7 @@
 package eu.loaders.starters;
 
 import eu.loaders.objs.Root;
+import ru.steamengine.rtti.basetypes.Assert;
 import ru.steamengine.rtti.basetypes.RegFactoryPlant;
 import ru.steamengine.rtti.basetypes.RegistryObjects;
 import ru.steamengine.rtti.defaultimplementors.utils.ShutDownNotification2;
@@ -18,6 +19,10 @@ import ru.steamengine.xmlstreaming.XMLObjectWriter;
 
 import java.io.InputStream;
 
+/**
+ *
+ * this small program demonstrates how the [kisser] library works
+ */
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
@@ -28,7 +33,14 @@ public class Main {
         InputStream stream = Main.class.getResourceAsStream("/data/data.xml");
         Root root = objectReader.read(stream, null);
         new XMLObjectWriter(objects.getRegistryUser()).write(root, System.out);
-        ShutDownNotification2.notifyshutdown(objects.getRegistryUser(), root);        
+
+
+        System.out.println("root.getObject1().getLongData()" + root.getObject1().getLongData());
+
+
+
+
+        ShutDownNotification2.notifyshutdown(objects.getRegistryUser(), root);
 
 //        while (true) {
 //            Thread.sleep(1000L);

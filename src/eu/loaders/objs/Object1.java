@@ -11,12 +11,33 @@ import ru.steamengine.rtti.basetypes.ClassPropertyRegistry;
 import ru.steamengine.rtti.basetypes.ClassRegistryContext;
 import ru.steamengine.rtti.defaultimplementors.DefaultRttiHelper;
 
-public class Object1 {
+public class Object1 extends Ancestor {
 
     private long longData;
 
+    private boolean loaded = false;
+    private boolean read = false;
+
     public long getLongData() {
         return longData;
+    }
+
+    @Override
+    protected void loaded() {
+        loaded = true;
+    }
+
+    @Override
+    protected void read() {
+        read = true;
+    }
+
+    public boolean isLoaded() {
+        return loaded;
+    }
+
+    public boolean isRead() {
+        return read;
     }
 
     @ClassPropertyRegistry
